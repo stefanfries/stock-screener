@@ -178,12 +178,12 @@ We need a language with strong data analysis libraries, financial ecosystem supp
 **Decision:**  
 Use Python.
 
-**Consequences:**  
+**Consequences:**
 
-+ Excellent library ecosystem (pandas, numpy, yfinance)  
-+ Large community and learning resources  
-+ Native Jupyter notebook support for exploration  
-- Not ideal for real-time high-frequency applications (out of scope for this project)
+- ✅ Excellent library ecosystem (pandas, numpy, yfinance)
+- ✅ Large community and learning resources
+- ✅ Native Jupyter notebook support for exploration
+- ⚠️ Not ideal for real-time high-frequency applications (out of scope for this project)
 
 ---
 
@@ -198,13 +198,13 @@ We need financial data (prices, fundamentals) without upfront cost while the pro
 **Decision:**  
 Use `yfinance` as the primary data source for v1.
 
-**Consequences:**  
+**Consequences:**
 
-+ Zero cost, no API key required  
-+ Covers fundamentals, price history, and metadata  
-- Rate limits may be a problem with large universes  
-- No professional SLA; data quality issues possible  
-- Migration to a paid provider may be needed later
+- ✅ Zero cost, no API key required
+- ✅ Covers fundamentals, price history, and metadata
+- ⚠️ Rate limits may be a problem with large universes
+- ⚠️ No professional SLA; data quality issues possible
+- ⚠️ Migration to a paid provider may be needed later
 
 ---
 
@@ -219,12 +219,12 @@ Raw metric values (e.g., ROE of 15% vs 30%) are not directly comparable across m
 **Decision:**  
 Convert all metrics to **percentile ranks** within the universe before scoring. A stock at the 80th percentile for ROE scores 80 on that metric regardless of the raw value.
 
-**Consequences:**  
+**Consequences:**
 
-+ Metrics become comparable regardless of scale  
-+ Handles outliers gracefully  
-+ Score is always relative to the current universe (not absolute)  
-- A "good" company in a bad universe still gets a high score (universe selection matters)
+- ✅ Metrics become comparable regardless of scale
+- ✅ Handles outliers gracefully
+- ✅ Score is always relative to the current universe (not absolute)
+- ⚠️ A "good" company in a bad universe still gets a high score (universe selection matters)
 
 ---
 
@@ -239,13 +239,13 @@ We need to cache API responses to avoid rate limits and enable reproducible runs
 **Decision:**  
 Store cached data as **Parquet files** in a local `data/` directory.
 
-**Consequences:**  
+**Consequences:**
 
-+ No database setup required  
-+ Parquet is compact, fast, and pandas-native  
-+ Easy to inspect and debug  
-- No concurrent multi-user support (acceptable for personal use)  
-- Manual cleanup needed if data grows large
+- ✅ No database setup required
+- ✅ Parquet is compact, fast, and pandas-native
+- ✅ Easy to inspect and debug
+- ⚠️ No concurrent multi-user support (acceptable for personal use)
+- ⚠️ Manual cleanup needed if data grows large
 
 ---
 

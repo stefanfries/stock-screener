@@ -110,7 +110,7 @@ Measures recent price behavior and relative strength.
 > **Note:** Valuation metrics are tricky — cheap stocks are often cheap for a reason. Use with care.
 
 | Metric | Description |
-| -| - |
+| - | - |
 | **P/E Ratio** | Price / Earnings |
 | **Forward P/E** | Price / Next-year estimated earnings |
 | **EV/EBITDA** | Enterprise value to EBITDA |
