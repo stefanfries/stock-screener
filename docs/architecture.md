@@ -14,23 +14,23 @@ The stock screener is a **data pipeline and scoring engine** composed of four lo
 
 ```text
 ┌─────────────────────────────────────────────────────────┐
-│                   1. Data Ingestion Layer                │
+│                   1. Data Ingestion Layer               │
 │   (Fetch raw price, fundamentals, metadata from APIs)   │
 └───────────────────────┬─────────────────────────────────┘
                         │
 ┌───────────────────────▼─────────────────────────────────┐
-│                   2. Storage Layer                       │
-│         (Local cache: files or lightweight DB)           │
+│                   2. Storage Layer                      │
+│         (Local cache: files or lightweight DB)          │
 └───────────────────────┬─────────────────────────────────┘
                         │
 ┌───────────────────────▼─────────────────────────────────┐
-│                3. Processing / Scoring Engine            │
-│    (Screening filters → metric calculation → ranking)    │
+│                3. Processing / Scoring Engine           │
+│    (Screening filters → metric calculation → ranking)   │
 └───────────────────────┬─────────────────────────────────┘
                         │
 ┌───────────────────────▼─────────────────────────────────┐
-│                  4. Output / Reporting Layer             │
-│          (Console, CSV export, notebooks, HTML)          │
+│                  4. Output / Reporting Layer            │
+│          (Console, CSV export, notebooks, HTML)         │
 └─────────────────────────────────────────────────────────┘
 ```
 
